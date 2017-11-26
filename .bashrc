@@ -32,13 +32,15 @@ fi
 # Vars, aliases, options
 #
 alias ls="ls --color -lGh"
-export AIRPORT="/airport"
 export MYBIN="$HOME/bin"
 set -o vi
 export EDITOR=vim
 export CDP_SOUND_EXT=wav
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 export PATH
+
+# good for looking at changes between commits in beyondcompare
+alias gdd="git difftool --dir-diff --no-symlinks";
 ##########################
 
 ##########################

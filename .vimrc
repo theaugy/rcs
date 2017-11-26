@@ -1,9 +1,13 @@
 " plugin stuff
 call pathogen#infect()
 Helptags
+" trailing whitespace detection:
+" create group ExtraWhitespace
+highlight ExtraWhitespace ctermbg=red
+match ExtraWhitespace '\s\+$'
 let g:ctrlp_map = '<c-l>'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|_updater)$',
+  \ 'dir':  '\v[\/](\.(git|hg|svn|DS_Store)|_updater)$',
   \ 'file': '\v((\.(exe|so|dll))|^moc_)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
@@ -27,13 +31,18 @@ map <F6> 10<C-W>_
 map <F7> <C-W>_
 map <F9> 100<C-W>>
 map <F8> 100<C-W><
+" sign a comment with F2
+nmap <F2> :r!date +//\ -\ SAS\ \%B\ \%d\ \%Y<C-M>==
 filetype plugin on
 filetype indent on
 
+" use up to 20 lines to show ctrlp results, and let the list get up to 50
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:50'
+set shellcmdflag=-lic
 let mapleader = "\<Space>"
 nnoremap <Leader>b :AsyncRun <Up>
 nnoremap <Leader>k :AsyncStop<CR>
-nnoremap <Leader>g :AsyncRun ag <Up>
+nnoremap <Leader>g :AsyncRun! ag <Up>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>n :cn<CR>
 nnoremap <Leader>m :cp<CR>
@@ -45,11 +54,15 @@ nnoremap <Leader>2 <C-w>2w<C-w>_
 nnoremap <Leader>3 <C-w>3w<C-w>_
 nnoremap <Leader>4 <C-w>4w<C-w>_
 nnoremap <Leader>5 <C-w>5w<C-w>_
-
+nnoremap <Leader>6 <C-w>6w<C-w>_
+nnoremap <Leader>7 <C-w>7w<C-w>_
+nnoremap <Leader>8 <C-w>8w<C-w>_
 autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2 
 set laststatus=2
 
-" Doesn't work very well for javascript/typescript.
-" I'll just use lots of whitespace.
-" nnoremap <C-k> :ClangFormat<CR>
-" vnoremap <C-k> :ClangFormat<CR>
+set matchpairs+=<:>
+
+set cinoptions=:0L0g0
+set norelativenumber
+set cursorline
+set iskeyword=@,48-57,_,192-255
