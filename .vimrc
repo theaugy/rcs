@@ -40,7 +40,7 @@ filetype indent on
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:50'
 set shellcmdflag=-lic
 let mapleader = "\<Space>"
-nnoremap <Leader>b :AsyncRun <Up>
+nnoremap <Leader>b :AsyncRun /Users/astclair/s/buildvm.sh <Up>
 nnoremap <Leader>k :AsyncStop<CR>
 nnoremap <Leader>g :AsyncRun! ag <Up>
 nnoremap <Leader>w :w<CR>
@@ -62,6 +62,8 @@ set laststatus=2
 
 set matchpairs+=<:>
 
+map <C-K> :pyf /usr/local/bin/clang-format.py<cr>
+imap <C-K> <c-o>:pyf /usr/local/bin/clang-format.py<cr>
 set cinoptions=:0L0g0
 set norelativenumber
 set cursorline
