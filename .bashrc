@@ -10,6 +10,9 @@ export EDITOR=vim
 export CDP_SOUND_EXT=wav
 PATH=$HOME/bin:$PATH:$HOME/.local/bin:$HOME/go/bin
 export PATH
+
+# good for looking at changes between commits in beyondcompare
+alias gdd="git difftool --dir-diff --no-symlinks";
 ##########################
 
 ##########################
