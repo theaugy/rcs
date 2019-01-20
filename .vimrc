@@ -71,5 +71,5 @@ set matchpairs+=<:>
 
 set cinoptions=:0L0g0
 set norelativenumber
-set cursorline
+set nocursorline
 set iskeyword=@,48-57,_,192-255

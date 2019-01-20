@@ -60,8 +60,6 @@ PROMPT_COMMAND=augy_prompt_command
 #
 if grep Linux <(uname) &> /dev/null; then
    # TODO: Could try harder to see what's available here
-	alias pbcopy='xsel -ib'
-	alias pbpaste='xsel -ob'
     function open() {
         xdg-open "$@"
     }
