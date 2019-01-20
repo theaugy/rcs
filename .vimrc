@@ -140,9 +140,9 @@ let g:vim_markdown_new_list_item_indent = 4
 set matchpairs+=<:>
 
 "map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
-autocmd Filetype cpp nmap <buffer> <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
-autocmd Filetype cpp nmap <buffer> <C-K> :pyf /usr/share/clang/clang-format.py<cr>
-autocmd Filetype cpp vmap <buffer> <C-K> :pyf /usr/share/clang/clang-format.py<cr>
+autocmd Filetype cpp nmap <buffer> <C-K> <c-o>:pyf /usr/share/clang/clang-format-6.0/clang-format.py<cr>
+autocmd Filetype cpp nmap <buffer> <C-K> :pyf /usr/share/clang/clang-format-6.0/clang-format.py<cr>
+autocmd Filetype cpp vmap <buffer> <C-K> :pyf /usr/share/clang/clang-format-6.0/clang-format.py<cr>
 set cinoptions=:0L0g0
 set relativenumber
 set nocursorline
