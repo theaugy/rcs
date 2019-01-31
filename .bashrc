@@ -27,3 +27,10 @@ export SC_SRC_ROOT=/local/scale-product
 export SC_SCREWI_USER=astclair
 
 export PS1="\[\e[32m\]\$HOSTNAME \[\e[1m\]\W $ \[\e[0m\]"
+
+function disable_middle_click {
+    local button_id=$(xinput list | grep TouchPad | head -1 | gawk '{ if (match($0,/id=([0-9]+)/, m)) print m[1] }')
+    [ -z "$button_id" ] && return 1
+    xinput set-button-map $button_id 1 1 3 4 5 6 7
+}
+disable_middle_click
